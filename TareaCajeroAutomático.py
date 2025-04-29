@@ -65,7 +65,7 @@ while op!=4:
             saldo-=5000
             print(f"Se retirarán $5000 de su saldo. Su saldo disponible es {saldo}")
             op=int(input('''
-                ¿Cuanto más va a retirar?  
+                ¿Desea realizar otro retiro?  
                 1.- $5000    2.- $10000
                 3.- $20000   4.- Salir 
                   '''))
@@ -77,7 +77,7 @@ while op!=4:
             saldo-=10000
             print(f"Se retirarán $10000 de su saldo. Su saldo disponible es {saldo}")
             op=int(input('''
-                ¿Cuanto más va a retirar?  
+                ¿Desea realizar otro retiro?  
                 1.- $5000    2.- $10000
                 3.- $20000   4.- Salir 
                   '''))
@@ -89,7 +89,7 @@ while op!=4:
             saldo-=20000
             print(f"Se retirarán $20000 de su saldo. Su saldo disponible es {saldo}")
             op=int(input('''
-                ¿Cuanto más va a retirar?  
+                ¿Desea realizar otro retiro?  
                 1.- $5000    2.- $10000
                 3.- $20000   4.- Salir 
                   '''))
