@@ -11,61 +11,87 @@ intentos=2
 #Cajas de billetes
 cj1=30 ; cj2=30 ; cj3=30 
 #Inicio de programa
-print("Ingrese su usuario :")
-user=input()
+user=input("Ingrese su usuario :")
 
 #Validación de datos ingresados
 if user.lower()==user1 or user2 or user3:
     if user==user1:
-        saldo=s1 ; cr=c1
+        cc=int(input("Ingrese la contraseña :"))
+        saldo=s1
+        while cc!=c1 and intentos>0:
+            intentos-=1
+            print(f"Clave incorrecta, intente nuevamente. Tiene {intentos+1} intentos")
+            cc=int(input("Ingrese la contraseña :"))
+            if intentos==0:
+                print("Numero de intentos excedido, la cuenta se ha bloqueado.")
     elif user==user2:
-        saldo=s2 ; cr=c2
+        cc=int(input("Ingrese la contraseña :"))
+        saldo=s2  
+        while cc!=c2 and intentos>0:
+            intentos-=1
+            print(f"Clave incorrecta, intente nuevamente. Tiene {intentos+1} intentos")
+            cc=int(input("Ingrese la contraseña :"))
+            if intentos==0:
+                print("Numero de intentos excedido, la cuenta se ha bloqueado.")
     elif user==user3:
-        saldo=s3 ; cr=c3
+        cc=int(input("Ingrese la contraseña :"))
+        saldo=s3
+        while cc!=c3 and intentos>0:
+            intentos-=1
+            print(f"Clave incorrecta, intente nuevamente. Tiene {intentos+1} intentos")
+            cc=int(input("Ingrese la contraseña :"))
+            if intentos==0:
+                print("Numero de intentos excedido, la cuenta se ha bloqueado.")
     else:
-        user=int(input("Ingrese un usuario válido :"))   
-cc=int(input("Ingrese la contraseña :"))
-while cc!=cr and intentos>0:
-    intentos-=1
-    print(f"Clave incorrecta, intente nuevamente. Tiene {intentos+1} intentos")
-    cc=int(input("Ingrese la contraseña :"))
-    if intentos==0:
-        print("Numero de intentos excedido, la cuenta se ha bloqueado.")
+            print(f"No existe el usuario {user}")               
              
 time.sleep(1)
 
 #Retiro de dinero
-op=int(input('''
+print('''
 BIENVENIDO      
     ¿Cuanto va a retirar?  
     1.- $5000    2.- $10000
     3.- $20000   4.- Salir 
-    '''))                            
+    ''')                            
+op=int(input())
 
 #Validación de elección y disponibilidad de billetes
-
-if op==1:
-    cj=cj1
-    retiro=5000
-elif op==2:
-    cj=cj2
-    retiro=10000
-elif op==3:
-    cj=cj3
-    retiro=20000
-elif op==4:
-    print("Saliendo...")   
-else:
-    op=int(input("Ingrese una opción válida para continuar :")) 
 while op!=4:
-    if cj>0 and saldo>=20000:
-        cj-=1
-        saldo-=retiro
-        print(f"Se retirarán $20000 de su saldo. Su saldo disponible es {saldo}")
-        op=int(input('''
-    ¿Desea realizar otro retiro?  
-    1.- $5000    2.- $10000
-    3.- $20000   4.- Salir 
-    '''))
+    if op==1:
+        if cj1>0 and saldo>=5000:
+            cj2-=1 ; saldo-=5000
+            print(f"Se retirarán $5000 de su saldo. Su saldo disponible es {saldo}")
+            op=int(input('''
+                ¿Desea realizar otro retiro?  
+                1.- $5000    2.- $10000
+                3.- $20000   4.- Salir 
+                  '''))
+        else:
+            op=int(input("Este cajero se ha quedado sin billetes de $5000 o no tiene suficiente saldo. Ingrese otra opción :"))
+    elif op==2:
+        if cj2>0 and saldo>=10000:
+            cj2-=1 ; saldo-=10000
+            print(f"Se retirarán $10000 de su saldo. Su saldo disponible es {saldo}")
+            op=int(input('''
+                ¿Desea realizar otro retiro?  
+                1.- $5000    2.- $10000
+                3.- $20000   4.- Salir 
+                  '''))
+        else:  
+            op=int(input("Este cajero se ha quedado sin billetes de $10000 o no tiene suficiente saldo. Ingrese otra opción :"))  
+    elif op==3:
+        if cj3>0 and saldo>=20000:
+            cj3-=1 ; saldo-=20000
+            print(f"Se retirarán $20000 de su saldo. Su saldo disponible es {saldo}")
+            op=int(input('''
+                ¿Desea realizar otro retiro?  
+                1.- $5000    2.- $10000
+                3.- $20000   4.- Salir 
+                  '''))
+        else:
+            op=int(input("Este cajero se ha quedado sin billetes de $20000 o no tiene suficiente saldo. Ingrese otra opción :"))            
+    elif op==4:
+        print("No se ha realizado ninguna operación. saliendo...")   
     else:
-        op=int(input("Este cajero se ha quedado sin billetes de $20000 o no tiene suficiente saldo. Ingrese otra opción :"))           
+        op=int(input("Ingrese una opción válida para continuar :"))    
