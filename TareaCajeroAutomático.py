@@ -43,47 +43,29 @@ BIENVENIDO
     '''))                            
 
 #Validación de elección y disponibilidad de billetes
+
+if op==1:
+    cj=cj1
+    retiro=5000
+elif op==2:
+    cj=cj2
+    retiro=10000
+elif op==3:
+    cj=cj3
+    retiro=20000
+elif op==4:
+    print("Saliendo...")   
+else:
+    op=int(input("Ingrese una opción válida para continuar :")) 
 while op!=4:
-    if op==1:
-        if cj1>0 and saldo>=5000:
-            cj1-=1
-            saldo-=5000
-            print(f"Se retirarán $5000 de su saldo. Su saldo disponible es {saldo}")
-            op=int(input('''
-                ¿Desea realizar otro retiro?  
-                1.- $5000    2.- $10000
-                3.- $20000   4.- Salir 
-                  '''))
-        else:
-            op=int(input("Este cajero se ha quedado sin billetes de $5000 o no tiene suficiente saldo. Ingrese otra opción :"))
-    elif op==2:
-        if cj2>0 and saldo>=10000:
-            cj2-=1
-            saldo-=10000
-            print(f"Se retirarán $10000 de su saldo. Su saldo disponible es {saldo}")
-            op=int(input('''
-                ¿Desea realizar otro retiro?  
-                1.- $5000    2.- $10000
-                3.- $20000   4.- Salir 
-                  '''))
-        else:  
-            op=int(input("Este cajero se ha quedado sin billetes de $10000 o no tiene suficiente saldo. Ingrese otra opción :"))  
-    elif op==3:
-        if cj3>0 and saldo>=20000:
-            cj3-=1
-            saldo-=20000
-            print(f"Se retirarán $20000 de su saldo. Su saldo disponible es {saldo}")
-            op=int(input('''
-                ¿Desea realizar otro retiro?  
-                1.- $5000    2.- $10000
-                3.- $20000   4.- Salir 
-                  '''))
-        else:
-            op=int(input("Este cajero se ha quedado sin billetes de $20000 o no tiene suficiente saldo. Ingrese otra opción :"))            
-    elif op==4:
-        print("Saliendo...")   
+    if cj>0 and saldo>=20000:
+        cj-=1
+        saldo-=retiro
+        print(f"Se retirarán $20000 de su saldo. Su saldo disponible es {saldo}")
+        op=int(input('''
+    ¿Desea realizar otro retiro?  
+    1.- $5000    2.- $10000
+    3.- $20000   4.- Salir 
+    '''))
     else:
-        op=int(input("Ingrese una opción válida para continuar :"))    
-
-
- 
+        op=int(input("Este cajero se ha quedado sin billetes de $20000 o no tiene suficiente saldo. Ingrese otra opción :"))           
