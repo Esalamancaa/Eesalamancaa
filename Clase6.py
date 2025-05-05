@@ -59,44 +59,84 @@
 # print("▄"*nr)
 
 
-# Crear un programa que pida la cantidad de ramos
-# Luego suma el promedio de cada materia
-# Basados en su promedio final, aplicar puntaje de beneficios
-# 4.5 y 5: 300, 5.1 y 6.0: 500, 6.1 y 7.0 : 800
-# Agregar puntaje segun carrera
-# Tecnico : +60, Ingenieria: +40, Diplomado: +20
+# # Crear un programa que pida la cantidad de ramos
+# # Luego suma el promedio de cada materia
+# # Basados en su promedio final, aplicar puntaje de beneficios
+# # 4.5 y 5: 300, 5.1 y 6.0: 500, 6.1 y 7.0 : 800
+# # Agregar puntaje segun carrera
+# # Tecnico : +60, Ingenieria: +40, Diplomado: +20
 
-pb=0
+# pb=0
 
-print("¿cuantos ramos tiene?")
-cr=int(input())
+# print("¿cuantos ramos tiene?")
+# cr=int(input())
 
-for i in range(cr):
+# for i in range(cr):
 
-    print(f"¿cuantas notas tiene el ramo {i+1}?")
-    notas=int(input())
-    nf=0
-    for j in range(notas):
-        print(f"Ingrese la nota {j+1}")
-        ne=float(input())
-        nf+=ne
-        promedio=nf/notas
-        if promedio>=4.5 and promedio<=5.0:
-            pb+=300
-        elif promedio>=5.1 and promedio<=6.0:
-            pb+=500 
-        else:
-            pb+=800           
-    print(f"Su promedio en este ramo es: {nf/notas}")
+#     print(f"¿cuantas notas tiene el ramo {i+1}?")
+#     notas=int(input())
+#     nf=0
+#     for j in range(notas):
+#         print(f"Ingrese la nota {j+1}")
+#         ne=float(input())
+#         nf+=ne
+#         promedio=nf/notas
+#         if promedio>=4.5 and promedio<=5.0:
+#             pb+=300
+#         elif promedio>=5.1 and promedio<=6.0:
+#             pb+=500 
+#         else:
+#             pb+=800           
+#     print(f"Su promedio en este ramo es: {nf/notas}")
 
-print("¿Su carrera es: 1.-Tecnico, 2.-Ingeniería, 3.-Diplomado")
-op=int(input())
+# print("¿Su carrera es: 1.-Tecnico, 2.-Ingeniería, 3.-Diplomado")
+# op=int(input())
 
-if op==1:
-    pb+=60
-elif op==2:
-    pb+=40
+# if op==1:
+#     pb+=60
+# elif op==2:
+#     pb+=40
+# else:
+#     pb+=20
+
+# print(f"Su puntaje de beneficios es de: {pb}")        
+
+
+#ProgramaVerProfe
+
+mat=int(input("Ingrese la cantidad de materias: "))
+
+for i in range(mat):
+    notaramo=float(input(f"Ingrese la nota del ramo {i+1}"))
+    suma+=notaramo
+prom=notaramo/mat
+
+if prom>=4.5 and prom<=5.0:
+    puntaje=300
+    print(f"Su puntaje de beneficios es de {puntaje}")   
+elif prom>=5.1 and prom<=6.0:
+    puntaje=500
+    print(f"Su puntaje de beneficios es de {puntaje}")    
+elif prom>=6.1 and prom<=7.0:
+    puntaje=800
+    print(f"Su puntaje de beneficios es de {puntaje}")     
 else:
-    pb+=20
+    print("Las notas son bajas para optar a un beneficio")
 
-print(f"Su puntaje de beneficios es de: {pb}")        
+car=int(input('''
+Ingrese su tipo de grado
+1.- Técnico
+2.- Ingeniería
+3.- Diplomado                                         
+              '''))         
+
+if car==1:
+    puntaje+=60
+elif car==2:
+    puntaje+=60    
+elif car==3:
+    puntaje+=20
+else:
+    print("Opción inválida")      
+
+print(f"El puntaje de beneficios es {puntaje}")
