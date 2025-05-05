@@ -109,7 +109,7 @@ mat=int(input("Ingrese la cantidad de materias: "))
 for i in range(mat):
     notaramo=float(input(f"Ingrese la nota del ramo {i+1}"))
     suma+=notaramo
-prom=notaramo/mat
+prom=suma/mat
 
 if prom>=4.5 and prom<=5.0:
     puntaje=300
