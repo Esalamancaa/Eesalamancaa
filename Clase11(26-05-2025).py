@@ -88,68 +88,52 @@
 
 #---------------------------------------------------------------------------#
 
-# #Carrito de compras con listas
+#Carrito de compras con listas
 
-# #Seleccionar una opción
-# #1. Agregar productos(Nombre producto y precio)
-# #2. Comprar(Submenú mostrando productos y precios)
-# #3. Crear boleta
-# #4. Salir
-# productos=[]
-# precio=[]
-# total=0
+#Seleccionar una opción
+#1. Agregar productos(Nombre producto y precio)
+#2. Comprar(Submenú mostrando productos y precios)
+#3. Crear boleta
+#4. Salir
+productos=[]
+precio=[]
+carrito=[]
+total=0
 
-# while True:
-#     print("Sistema de supermercado")
-#     print('''
-#     Ingrese una opción:
-#     1.- Agregar productos
-#     2.- Comprar 
-#     3.- Crear boleta
-#     4.- Salir
-#         ''')
-#     op=int(input())
-#     match op:
-#         case 1:
-#             print("Ingrese el producto y el precio")
-#             pro=input("Ingrese el producto: ")
-#             productos.append(pro)
-#             pre=int(input("Ingrese el precio: "))
-#             precio.append(pre)
-#         case 2:
-#             p=0
-#             n=1
-#             print("¿Qué producto va a comprar?")   
-#             for i in productos:
-#                   print(f"{n}.-{productos[p]} ${precio[p]}")
-#                   p+=1
-#                   n+=1
-#             print("0.Salir")      
-               
-#             op=int(input())
-#             match op:
-#                 case 1:
-#                     print(f"Ha comprado{productos[0]}")    
-#                     total+=precio[0]
-#                 case 2:
-#                     print(f"Ha comprado{productos[1]}")    
-#                     total+=precio[1]  
-#                 case 3:
-#                     print(f"Ha comprado{productos[2]}")    
-#                     total+=precio[2]       
-#                 case 4:
-#                     print(f"Ha comprado{productos[3]}")    
-#                     total+=precio[3]   
-#                 case 5:
-#                     print(f"Ha comprado{productos[4]}")    
-#                     total+=precio[4] 
-#                 case 0:
-#                     break
-#                 case _:
-#                     print("Ingrese una opción válida")
-#         case 3:
-#             print(f"Su total es de ${total}")
-#             print(f"Su total + IVA es de ${total*1.19}")    
-#         case 4:
-#             print("Saliendo del sistema...")
-#             break
+while True:
+    print("Sistema de supermercado")
+    print('''
+    Ingrese una opción:
+    1.- Agregar productos
+    2.- Comprar 
+    3.- Crear boleta
+    4.- Salir
+        ''')
+    op=int(input())
+    match op:
+        case 1:
+            print("Ingrese el producto y el precio")
+            pro=input("Ingrese el producto: ")
+            productos.append(pro)
+            pre=int(input("Ingrese el precio: "))
+            precio.append(pre)
+        case 2:
+            p=0
+            n=1
+            print("¿Qué producto va a comprar?")   
+            for i in productos:
+                  print(f"{n}.-{productos[p]} ${precio[p]}")
+                  p+=1
+                  n+=1
+            print("0.Salir")      
+            op=int(input())
+            carrito.append(op-1)
+            print("Los productos que lleva son")
+            for i in carrito:
+                print(productos[i])
+        case 3:
+            print(f"Su total es de ${total}")
+            print(f"Su total + IVA es de ${total*1.19}")    
+        case 4:
+            print("Saliendo del sistema...")
+            break
