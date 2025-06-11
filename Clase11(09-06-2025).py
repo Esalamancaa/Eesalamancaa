@@ -121,7 +121,8 @@ while True:
             p=0
             n=1
             print("¿Qué producto va a comprar?")   
-            for i in productos:
+            for i in range(len(productos)):
+                  #len es para el largo de la lista
                   print(f"{n}.-{productos[p]} ${precio[p]}")
                   p+=1
                   n+=1
