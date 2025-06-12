@@ -8,53 +8,53 @@
  #5.- Limpiar todas las notas
  #6.- Salir
 
-notas=[6.2,6.4,5.2,5.5,6.0]
-while True:
-    while True:
-        try:
-            print('''
-            Sistema de administración de calificaciones
-            1.- Ingresar nota
-            2.- Borrar nota
-            3.- Mostrar notas
-            4.- Sacar promedio. Nota mayor y menor
-            5.- Borrar las notas  
-            6.- Salir                                   
-                ''')
-            op=int(input())
-            break
-        except Exception:
-            print("Ingrese un número entero")    
-    match op:
-        case 1:
-            print("Ingrese la nota que quiere añadir")
-            nota=float(input())
-            notas.append(nota)
-        case 2:
-            print(notas)
-            nota=float(input("Ingrese la nota que quiere remover: "))
-            notas.remove(nota)
-        case 3:
-            print("Las notas ingresadas son:")
-            for i in range(len(notas)):
-                    print(f"{i+1}.- {notas[i]} ") 
-        case 4:
-            if len(notas)==0:
-                print("No hay datos para esta acción")
-            else:
-                promedio=sum(notas)/len(notas)
-                print(f"EL promedio de las notas es: {round(promedio,1)}")        
-                print(f"La nota mayor es: {max(notas)}")   
-                print(f"La nota menor es: {min(notas)}")     
-        case 5:
-            notas.clear()
-        case 6:
-            print("En construcción...")
-        case 7:
-            print("Saliendo del sistema...")  
-            break          
-        case _:
-            print("No es una opción válida, vuelva a intentar")
+#notas=[6.2,6.4,5.2,5.5,6.0]
+#while True:
+#    while True:
+#        try:
+#            print('''
+#            Sistema de administración de calificaciones
+#            1.- Ingresar nota
+#            2.- Borrar nota
+#            3.- Mostrar notas
+#            4.- Sacar promedio. Nota mayor y menor
+#            5.- Borrar las notas  
+#            6.- Salir                                   
+#                ''')
+#            op=int(input())
+#            break
+#        except Exception:
+#            print("Ingrese un número entero")    
+#    match op:
+#        case 1:
+#            print("Ingrese la nota que quiere añadir")
+#            nota=float(input())
+#            notas.append(nota)
+#        case 2:
+#            print(notas)
+#            nota=float(input("Ingrese la nota que quiere remover: "))
+#            notas.remove(nota)
+#        case 3:
+#            print("Las notas ingresadas son:")
+#            for i in range(len(notas)):
+#                    print(f"{i+1}.- {notas[i]} ") 
+#        case 4:
+#            if len(notas)==0:
+#                print("No hay datos para esta acción")
+#            else:
+#                promedio=sum(notas)/len(notas)
+#                print(f"EL promedio de las notas es: {round(promedio,1)}")        
+#                print(f"La nota mayor es: {max(notas)}")   
+#                print(f"La nota menor es: {min(notas)}")     
+#        case 5:
+#            notas.clear()
+#        case 6:
+#            print("En construcción...")
+#        case 7:
+#            print("Saliendo del sistema...")  
+#            break          
+#        case _:
+#            print("No es una opción válida, vuelva a intentar")
 
 #-------------------------------------------------------------------------------------------------------------------#  
 
