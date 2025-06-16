@@ -112,8 +112,9 @@ while True:
             print('''
         1.- Agregar productos
         2.- Mostrar productos
-        3.- Actualizar producto          
-        4.- Salir                    
+        3.- Actualizar producto      
+        4.- Borrar producto              
+        5.- Salir                    
                 ''')
             op=int(input())
             break    
@@ -138,6 +139,8 @@ while True:
             list_prod[opc-1]["Nombre"]=nn
             list_prod[opc-1]["precio"]=np
             print("Artículo actualizado")
+        case 5:
+            break    
         case _:
             print("Opción inválida")
 
